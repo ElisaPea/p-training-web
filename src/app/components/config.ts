@@ -78,7 +78,7 @@ export const secretSantaList: SecretSantaPerson[] = [
     name: "Roberta",
     secretSanta: "U2FsdGVkX1/9AMQ/z83sigfKgoUzsQ3QeIJhx6JCpv0=",
     password: "gnu",
-    img: "/images/Robi.jpg",
+    img: "/images/Robii.jpg",
   },
   {
     name: "Rosita",
