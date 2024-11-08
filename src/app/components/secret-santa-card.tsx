@@ -4,93 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { IoMdEye } from "react-icons/io";
 import { IoMdEyeOff } from "react-icons/io";
 import { IoMdArrowRoundBack } from "react-icons/io";
-
-export const secretSantaList = [
-  {
-    name: "Adriano",
-    secretSanta: "",
-    password: "sosexy",
-    img: "/images/Bea.jpg",
-  },
-  {
-    name: "Alessandra",
-    secretSanta: "",
-    password: "fregna",
-    img: "/images/Ale.jpg",
-  },
-  {
-    name: "Alessia",
-    secretSanta: "",
-    password: "creep",
-    img: "/images/Alessia.jpg",
-  },
-  {
-    name: "Barbara",
-    secretSanta: "",
-    password: "banana",
-    img: "/images/Babi.jpg",
-  },
-  {
-    name: "Beatrice",
-    secretSanta: "",
-    password: "gay",
-    img: "/images/Bea.jpg",
-  },
-  {
-    name: "Chiara",
-    secretSanta: "",
-    password: "paxxa",
-    img: "/images/Chiara.jpg",
-  },
-  {
-    name: "Elisa",
-    secretSanta: "",
-    password: "io",
-    img: "/images/Eli.jpg",
-  },
-  {
-    name: "Fabio",
-    secretSanta: "",
-    password: "lol",
-    img: "/images/Fabio.jpg",
-  },
-  {
-    name: "Francesca",
-    secretSanta: "",
-    password: "merda",
-    img: "/images/Franci.jpg",
-  },
-  {
-    name: "Katya",
-    secretSanta: "",
-    password: "ciao",
-    img: "/images/Bea.jpg",
-  },
-  {
-    name: "Ornella",
-    secretSanta: "",
-    password: "ornella",
-    img: "/images/Bea.jpg",
-  },
-  {
-    name: "Roberta",
-    secretSanta: "",
-    password: "gnu",
-    img: "/images/Robi.jpg",
-  },
-  {
-    name: "Rosita",
-    secretSanta: "",
-    password: "sonobella",
-    img: "/images/Rosita.jpg",
-  },
-  {
-    name: "Tania",
-    secretSanta: "",
-    password: "ciao2",
-    img: "/images/Bea.jpg",
-  },
-];
+import CryptoJS from "crypto-js";
+import { secretSantaList, SecretSantaPerson } from "./config";
 
 export const SecretSantaCard = (props: any) => {
   const { member } = props;
@@ -110,6 +25,15 @@ export const SecretSantaCard = (props: any) => {
     setPassword("");
     if (password === member.password) setCardView("secret");
     else setCardView("poop");
+  };
+
+  const decryptName = (
+    encryptedName: string | CryptoJS.lib.CipherParams,
+    pass: string
+  ) => {
+    const bytes = CryptoJS.AES.decrypt(encryptedName, pass);
+    console.log(encryptedName, bytes, bytes.toString(CryptoJS.enc.Utf8));
+    return bytes.toString(CryptoJS.enc.Utf8);
   };
 
   useEffect(() => {
@@ -136,11 +60,11 @@ export const SecretSantaCard = (props: any) => {
   }, [cardView]);
 
   return (
-    <Card key={member.name} className="w-full">
+    <Card key={member.name} className="h-full w-64 md:w-full mx-auto">
       {/* <div onClick={() => setCardView("password")}> */}
       {cardView === "member" && (
         <div onClick={() => setCardView("password")}>
-          <Skeleton isLoaded={isImageLoaded} className="h-40 w-full rounded-lg">
+          <Skeleton isLoaded={isImageLoaded} className="h-48 w-full rounded-lg">
             <div className="relative h-full w-full">
               <Image
                 src={member.img}
@@ -148,7 +72,7 @@ export const SecretSantaCard = (props: any) => {
                 width={800}
                 height={800}
                 className="rounded-lg object-cover"
-                onLoadingComplete={() => setIsImageLoaded(true)}
+                onLoad={() => setIsImageLoaded(true)}
               />
             </div>
             <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
@@ -162,15 +86,15 @@ export const SecretSantaCard = (props: any) => {
       )}
 
       {cardView === "password" && (
-        <Skeleton isLoaded={isImageLoaded} className="h-40 w-full rounded-lg">
+        <Skeleton isLoaded={isImageLoaded} className="h-48 w-full rounded-lg">
           <div className="relative h-full w-full">
             <Image
-              src={"/images/Tree.webp"} // Imagen estática para la vista de la contraseña
+              src={"/images/Tree.webp"}
               alt={member.name}
               width={800}
               height={800}
               className="rounded-lg object-cover"
-              onLoadingComplete={() => setIsImageLoaded(true)}
+              onLoad={() => setIsImageLoaded(true)}
             />
           </div>
           <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
@@ -221,7 +145,7 @@ export const SecretSantaCard = (props: any) => {
 
       {cardView === "poop" && (
         <>
-          <Skeleton isLoaded={isImageLoaded} className="h-40 w-full rounded-lg">
+          <Skeleton isLoaded={isImageLoaded} className="h-48 w-full rounded-lg">
             <div className="relative h-full w-full">
               <Image
                 src={"/images/poop.webp"}
@@ -229,7 +153,7 @@ export const SecretSantaCard = (props: any) => {
                 width={800}
                 height={800}
                 className="rounded-lg object-cover"
-                onLoadingComplete={() => setIsImageLoaded(true)}
+                onLoad={() => setIsImageLoaded(true)}
               />
             </div>
             <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
@@ -250,7 +174,7 @@ export const SecretSantaCard = (props: any) => {
       )}
       {cardView === "secret" && (
         <>
-          <Skeleton isLoaded={isImageLoaded} className="h-40 w-full rounded-lg">
+          <Skeleton isLoaded={isImageLoaded} className="h-48 w-full rounded-lg">
             <div className="relative h-full w-full">
               <Image
                 src={"/images/Santa.jpeg"}
@@ -258,13 +182,13 @@ export const SecretSantaCard = (props: any) => {
                 width={800}
                 height={800}
                 className="rounded-lg object-cover"
-                onLoadingComplete={() => setIsImageLoaded(true)}
+                onLoad={() => setIsImageLoaded(true)}
               />
             </div>
             <div className="absolute inset-0 bg-black opacity-60 rounded-lg"></div>
             <div className="flex flex-col gap-4 pt-8 text-white absolute inset-0 flex items-center justify-center cursor-pointer">
               <div className=" border-2 border-white px-4 py-2 rounded-lg mb-1">
-                {member.secretSanta}
+                {decryptName(member.secretSanta, member.password)}
               </div>
               <div>{counter}</div>
             </div>

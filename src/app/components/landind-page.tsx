@@ -1,7 +1,8 @@
 import { Card, CardBody, Spinner, Skeleton } from "@nextui-org/react";
 import Image from "next/image";
 import { useState } from "react";
-import { SecretSantaCard, secretSantaList } from "./secret-santa-card";
+import { secretSantaList } from "./config";
+import { SecretSantaCard } from "./secret-santa-card";
 
 export default function LandingPage() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -30,7 +31,7 @@ export default function LandingPage() {
           o subirai le pene dell'inferno...... Anzi, provaci. Ti sfido....
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 w-full max-w-[1200px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 w-full max-w-[1200px]">
           {secretSantaList.map((member, index) => (
             <SecretSantaCard key={index} member={member} />
           ))}
