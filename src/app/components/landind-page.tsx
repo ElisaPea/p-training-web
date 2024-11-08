@@ -51,7 +51,7 @@ export default function LandingPage() {
         >
           ISTRUZIONI
         </Button>
-        <Button
+        {/* <Button
           onPress={() =>
             window.open(
               "https://padlet.com/eelisapea/bacheca-natale-739xsuqzvl9mfre1"
@@ -62,7 +62,7 @@ export default function LandingPage() {
           // endContent={<SlPresent />}
         >
           Bachecha
-        </Button>
+        </Button> */}
         {/* </Card> */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 w-full max-w-[1200px]">
           {secretSantaList.map((member, index) => (
