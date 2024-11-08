@@ -1,6 +1,6 @@
 import { Card, Button, Input, Skeleton } from "@nextui-org/react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IoMdEye } from "react-icons/io";
 import { IoMdEyeOff } from "react-icons/io";
 import { IoMdArrowRoundBack } from "react-icons/io";
@@ -93,12 +93,14 @@ export const secretSantaList = [
 ];
 
 export const SecretSantaCard = (props: any) => {
-  const { member, isLoaded } = props;
+  const { member } = props;
   const [cardView, setCardView] = useState<
     "member" | "password" | "poop" | "secret"
   >("member");
   const [password, setPassword] = useState("");
   const [counter, setCounter] = useState(5);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const passRef = useRef<HTMLInputElement>(null);
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -111,7 +113,10 @@ export const SecretSantaCard = (props: any) => {
   };
 
   useEffect(() => {
+    setIsImageLoaded(false);
     let intervalId: any;
+    if (cardView === "password" && passRef && passRef.current)
+      passRef.current.focus();
     if (cardView === "secret" && counter > 0) {
       intervalId = setInterval(() => {
         setCounter((prev) => {
@@ -124,7 +129,10 @@ export const SecretSantaCard = (props: any) => {
       }, 1000);
     }
 
-    return () => clearInterval(intervalId);
+    return () => {
+      clearInterval(intervalId);
+      setCounter(5);
+    };
   }, [cardView]);
 
   return (
@@ -132,7 +140,7 @@ export const SecretSantaCard = (props: any) => {
       {/* <div onClick={() => setCardView("password")}> */}
       {cardView === "member" && (
         <div onClick={() => setCardView("password")}>
-          <Skeleton isLoaded={isLoaded} className="h-40 w-full rounded-lg">
+          <Skeleton isLoaded={isImageLoaded} className="h-40 w-full rounded-lg">
             <div className="relative h-full w-full">
               <Image
                 src={member.img}
@@ -140,6 +148,7 @@ export const SecretSantaCard = (props: any) => {
                 width={800}
                 height={800}
                 className="rounded-lg object-cover"
+                onLoadingComplete={() => setIsImageLoaded(true)}
               />
             </div>
             <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
@@ -153,7 +162,7 @@ export const SecretSantaCard = (props: any) => {
       )}
 
       {cardView === "password" && (
-        <Skeleton isLoaded={isLoaded} className="h-40 w-full rounded-lg">
+        <Skeleton isLoaded={isImageLoaded} className="h-40 w-full rounded-lg">
           <div className="relative h-full w-full">
             <Image
               src={"/images/Tree.webp"} // Imagen estática para la vista de la contraseña
@@ -161,11 +170,13 @@ export const SecretSantaCard = (props: any) => {
               width={800}
               height={800}
               className="rounded-lg object-cover"
+              onLoadingComplete={() => setIsImageLoaded(true)}
             />
           </div>
           <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
           <div className="flex flex-col gap-2 absolute inset-0 flex items-center justify-center cursor-pointer">
             <Input
+              ref={passRef}
               variant="bordered"
               labelPlacement="outside"
               placeholder="Password"
@@ -210,7 +221,7 @@ export const SecretSantaCard = (props: any) => {
 
       {cardView === "poop" && (
         <>
-          <div className="h-40 w-full rounded-lg">
+          <Skeleton isLoaded={isImageLoaded} className="h-40 w-full rounded-lg">
             <div className="relative h-full w-full">
               <Image
                 src={"/images/poop.webp"}
@@ -218,6 +229,7 @@ export const SecretSantaCard = (props: any) => {
                 width={800}
                 height={800}
                 className="rounded-lg object-cover"
+                onLoadingComplete={() => setIsImageLoaded(true)}
               />
             </div>
             <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
@@ -233,12 +245,12 @@ export const SecretSantaCard = (props: any) => {
                 <IoMdArrowRoundBack />
               </Button>
             </div>
-          </div>
+          </Skeleton>
         </>
       )}
       {cardView === "secret" && (
         <>
-          <div className="h-40 w-full rounded-lg">
+          <Skeleton isLoaded={isImageLoaded} className="h-40 w-full rounded-lg">
             <div className="relative h-full w-full">
               <Image
                 src={"/images/Santa.jpeg"}
@@ -246,6 +258,7 @@ export const SecretSantaCard = (props: any) => {
                 width={800}
                 height={800}
                 className="rounded-lg object-cover"
+                onLoadingComplete={() => setIsImageLoaded(true)}
               />
             </div>
             <div className="absolute inset-0 bg-black opacity-60 rounded-lg"></div>
@@ -258,7 +271,7 @@ export const SecretSantaCard = (props: any) => {
             <div className="absolute top-2 left-2">
               <div className="text-white ">Il tuo Santa Segreto è...</div>
             </div>
-          </div>
+          </Skeleton>
         </>
       )}
       {/* </div> */}

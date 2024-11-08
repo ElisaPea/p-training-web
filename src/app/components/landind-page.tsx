@@ -8,7 +8,7 @@ export default function LandingPage() {
 
   setTimeout(() => {
     setIsLoaded(true);
-  }, 4000);
+  }, 2000);
 
   return (
     <div className="min-h-screen flex flex-col gap-3">
@@ -32,7 +32,7 @@ export default function LandingPage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 w-full max-w-[1200px]">
           {secretSantaList.map((member, index) => (
-            <SecretSantaCard key={index} member={member} isLoaded={isLoaded} />
+            <SecretSantaCard key={index} member={member} />
           ))}
         </div>
       </div>
