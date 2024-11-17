@@ -12,7 +12,7 @@ import {
   Radio,
 } from "@nextui-org/react";
 import { useState } from "react";
-import { secretSantaList } from "./config";
+import { assignSecretSanta, secretSantaList } from "./config";
 import { SecretSantaCard } from "./secret-santa-card";
 import { LuSparkles } from "react-icons/lu";
 import { SlPresent } from "react-icons/sl";
@@ -52,11 +52,10 @@ export default function LandingPage() {
           ISTRUZIONI
         </Button>
         <Button
-          // onPress={() =>
-          // window.open(
-          //   "https://padlet.com/eelisapea/bacheca-natale-739xsuqzvl9mfre1"
-          // )
-          // }
+          // onPress={() => {
+          //   const list = assignSecretSanta(secretSantaList);
+          //   console.log(list);
+          // }}
           className="border-2 border-black mb-8 text-xl"
           color="danger"
           // endContent={<SlPresent />}
@@ -65,9 +64,11 @@ export default function LandingPage() {
         </Button>
         {/* </Card> */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 w-full max-w-[1200px]">
-          {secretSantaList.map((member, index) => (
-            <SecretSantaCard key={index} member={member} />
-          ))}
+          {secretSantaList
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .map((member, index) => (
+              <SecretSantaCard key={index} member={member} />
+            ))}
         </div>
       </div>
       <Modal isOpen={isOpen} placement={"center"} onOpenChange={onOpenChange}>

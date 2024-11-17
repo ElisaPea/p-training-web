@@ -6,110 +6,116 @@ export interface SecretSantaPerson {
   password: string;
   img: string;
 }
-
 export const secretSantaList: SecretSantaPerson[] = [
   {
+    name: "Ornella",
+    secretSanta: "U2FsdGVkX18l5nVpr1Ow+EV5JHIM+7nzoD/2PavPyAw=",
+    password: "ornella",
+    img: "/images/Ornella.png",
+  },
+  {
+    name: "Tania",
+    secretSanta: "U2FsdGVkX18BQcVkp9/jt/g1FP/1kSs4fpZiReH9qIk=",
+    password: "ciao2",
+    img: "/images/Tania.jpg",
+  },
+  {
+    name: "Elisa",
+    secretSanta: "U2FsdGVkX19sDxkzA2khzAuJDTL/6YLxon0I6+3Du1Y=",
+    password: "io",
+    img: "/images/Eli.jpg",
+  },
+  {
+    name: "Rosita",
+    secretSanta: "U2FsdGVkX1/HPXpJutm8KDEJCoPsJTYKIPIFVwERw5Y=",
+    password: "sonobella",
+    img: "/images/Rosita.jpg",
+  },
+  {
     name: "Adriano",
-    secretSanta: "U2FsdGVkX180IIe624oO+1ayPcBXz9SEPDfRXtx0v8Y=",
+    secretSanta: "U2FsdGVkX18o2oFTgTO1IO3uE/ww6yD8gOHyiOVR0K4=",
     password: "sosexy",
     img: "/images/Adri.jpg",
   },
   {
     name: "Alessandra",
-    secretSanta: "U2FsdGVkX1/f0qcg3nMMASP6O5suVPLydorVcscXSuQ=",
+    secretSanta: "U2FsdGVkX1/BOKANoZ2otskCxPBL8Oa6Nu4kOYsP2go=",
     password: "fregna",
     img: "/images/Ale.jpg",
   },
   {
     name: "Alessia",
-    secretSanta: "U2FsdGVkX19BGbV1DriYKE4iIraMLmhzZ4wJg3QzYKE=",
+    secretSanta: "U2FsdGVkX19a1Mf6Mf0vSFSM0wvc0AYcqqNCsoaluhk=",
     password: "creep",
     img: "/images/Ales.jpg",
   },
   {
     name: "Barbara",
-    secretSanta: "U2FsdGVkX1+zI8qJEYF7ITNkm0PbyO5jdsWIPUBZyts=",
+    secretSanta: "U2FsdGVkX19zXs9XqSDf0WNJKYB03Ncm7OoJ1rbSASs=",
     password: "banana",
     img: "/images/Babi.jpg",
   },
   {
     name: "Beatrice",
-    secretSanta: "U2FsdGVkX1/FP2NZPPRN6BbxhWR8gfGjs6sv02yoSgU=",
+    secretSanta: "U2FsdGVkX18HHvXhI+ej9mB15D/LixHqIUi+l2Ba49M=",
     password: "gay",
     img: "/images/Bea.jpg",
   },
   {
     name: "Chiara",
-    secretSanta: "U2FsdGVkX1/KrTz9AMOJCCPBcM+F+ozSaKoXK9BIi2M=",
+    secretSanta: "U2FsdGVkX19jO4B0CdYGcH35KCNouglg/u0p6mPesQA=",
     password: "paxxa",
     img: "/images/Chiara.jpg",
   },
   {
-    name: "Elisa",
-    secretSanta: "U2FsdGVkX18ecnPdISS0Je62vo/d9daRTtXONNAF1FU=",
-    password: "io",
-    img: "/images/Eli.jpg",
-  },
-  {
     name: "Fabio",
-    secretSanta: "U2FsdGVkX18zsSlfrOUui/TWMmq+mZdzeyeRv8mGdLo=",
+    secretSanta: "U2FsdGVkX19vVOOIV+ePfT5OzwtaB3Xo4bEhxqOX0UQ=",
     password: "lol",
     img: "/images/Fabio.jpg",
   },
   {
     name: "Francesca",
-    secretSanta: "U2FsdGVkX1/xYt0oRY69vOJ+n2/XjZQKSYk5vyvzM9M=",
+    secretSanta: "U2FsdGVkX1+zGCBGcEC88Fe88NaTRX5J6H/O3ZS9IsY=",
     password: "fraculo",
     img: "/images/Francii.jpg",
   },
   {
-    name: "Katya",
-    secretSanta: "U2FsdGVkX1+2boT+hBqhyhO5AsHvVok7ckur7iImVs0=",
-    password: "ciao",
-    img: "/images/Katya.jpg",
-  },
-  {
-    name: "Ornella",
-    secretSanta: "U2FsdGVkX1/oJUTzTEJ2ufcOiPNxFHMuVujuhyYD3xg=",
-    password: "ornella",
-    img: "/images/Ornella.png",
+    name: "Marco",
+    secretSanta: "U2FsdGVkX1+43Z4MQ96QOI7I1pM4ZRIsp9eIYoQ6gvE=",
+    password: "paloma",
+    img: "/images/marco.png",
   },
   {
     name: "Roberta",
-    secretSanta: "U2FsdGVkX1/9AMQ/z83sigfKgoUzsQ3QeIJhx6JCpv0=",
+    secretSanta: "U2FsdGVkX1/GiBcj8twRRdUoiThA+CSwaTmAtkFL+Hk=",
     password: "gnu",
     img: "/images/Robii.jpg",
   },
-  {
-    name: "Rosita",
-    secretSanta: "U2FsdGVkX1/EwcNC6F5yYHC7/GjdOXKewuuqkg7d9bw=",
-    password: "sonobella",
-    img: "/images/Rosita.jpg",
-  },
-  {
-    name: "Tania",
-    secretSanta: "U2FsdGVkX184isCbaKnOg+WvUbsOjjY6tRXuFvurnxw=",
-    password: "ciao2",
-    img: "/images/Tania.jpg",
-  },
+];
+const passwordList = [
+  { name: "Ornella", password: "ornella" },
+  { name: "Tania", password: "ciao2" },
+  { name: "Elisa", password: "io" },
+  { name: "Rosita", password: "sonobella" },
+  { name: "Adriano", password: "sosexy" },
+  { name: "Alessandra", password: "fregna" },
+  { name: "Alessia", password: "creep" },
+  { name: "Barbara", password: "banana" },
+  { name: "Beatrice", password: "gay" },
+  { name: "Chiara", password: "paxxa" },
+  { name: "Fabio", password: "lol" },
+  { name: "Francesca", password: "fraculo" },
+  { name: "Marco", password: "paloma" },
+  { name: "Roberta", password: "gnu" },
 ];
 
 export const assignSecretSanta = (members: SecretSantaPerson[]) => {
   // Restricciones de asignación
   const availableNames = {
     Ornella: ["Chiara", "Francesca", "Alessia", "Fabio"],
-    Tania: ["Katya", "Adriano", "Alessandra", "Fabio", "Roberta"],
-    Katya: [
-      "Chiara",
-      "Francesca",
-      "Alessia",
-      "Fabio",
-      "Roberta",
-      "Barbara",
-      "Adriano",
-      "Beatrice",
-    ],
+    Tania: ["Adriano", "Alessandra", "Fabio", "Roberta"],
     Elisa: [
+      "Chiara",
       "Francesca",
       "Alessia",
       "Alessandra",
@@ -132,54 +138,86 @@ export const assignSecretSanta = (members: SecretSantaPerson[]) => {
 
   const assignedNames: { [key: string]: string } = {};
 
-  // Función para asignar el Secret Santa con las restricciones
-  const assign = () => {
-    members.forEach((member) => {
-      let possibleNames: string[];
+  // Lista de personas que pueden recibir "Ornella" como su Secret Santa
+  const eligibleForOrnella = ["Chiara", "Francesca", "Alessia", "Fabio"];
 
-      // Condiciones para cada persona
-      if (member.name === "Ornella") {
-        possibleNames = availableNames.Ornella;
-      } else if (member.name === "Tania") {
-        possibleNames = availableNames.Tania;
-      } else if (member.name === "Katya") {
-        possibleNames = availableNames.Katya.filter((name) => name !== "Elisa");
-      } else if (member.name === "Elisa") {
-        possibleNames = availableNames.Elisa.filter(
-          (name) => name !== "Katya" && name !== "Tania"
-        );
-      } else if (member.name === "Rosita") {
-        possibleNames = availableNames.Rosita;
-      } else {
-        // Miembros restantes (si no son los mencionados)
-        possibleNames = members
-          .filter(
-            (m) =>
-              m.name !== member.name &&
-              !Object.values(assignedNames).includes(m.name)
-          )
-          .map((m) => m.name);
+  // Función recursiva para asignar nombres
+  const backtrack = (index: number): boolean => {
+    if (index === members.length) {
+      // Caso base: todos los miembros tienen un Secret Santa asignado
+      return true;
+    }
+
+    const member = members[index];
+    let possibleNames: string[];
+
+    // Restricciones específicas según el nombre
+    if (member.name === "Ornella") {
+      possibleNames = availableNames.Ornella.filter(
+        (name) => !Object.values(assignedNames).includes(name)
+      );
+    } else if (member.name === "Tania") {
+      possibleNames = availableNames.Tania.filter(
+        (name) => !Object.values(assignedNames).includes(name)
+      );
+    } else if (member.name === "Elisa") {
+      possibleNames = availableNames.Elisa.filter(
+        (name) => !Object.values(assignedNames).includes(name)
+      );
+    } else if (member.name === "Rosita") {
+      possibleNames = availableNames.Rosita.filter(
+        (name) => !Object.values(assignedNames).includes(name)
+      );
+    } else {
+      // Miembros restantes (sin restricciones específicas)
+      possibleNames = members
+        .filter(
+          (m) =>
+            m.name !== member.name &&
+            !Object.values(assignedNames).includes(m.name) &&
+            // Si el nombre es "Ornella", verificar que sea elegible
+            (m.name !== "Ornella" || eligibleForOrnella.includes(member.name))
+        )
+        .map((m) => m.name);
+    }
+
+    // Intentar asignar cada nombre posible
+    for (const name of possibleNames) {
+      assignedNames[member.name] = name;
+
+      // Continuar con el siguiente miembro
+      if (backtrack(index + 1)) {
+        return true;
       }
 
-      // Asignar un nombre aleatorio de los posibles
-      const randomName =
-        possibleNames[Math.floor(Math.random() * possibleNames.length)];
-      assignedNames[member.name] = randomName;
-    });
+      // Deshacer la asignación si no funciona
+      delete assignedNames[member.name];
+    }
+
+    // Si no hay nombres válidos, regresar false para retroceder
+    return false;
   };
 
-  // Ejecutar la asignación y verificar restricciones
-  assign();
+  // Ordenar la lista de miembros según el número de restricciones (procesar primero los más restringidos)
+  members.sort((a, b) => {
+    const aRestrictions =
+      availableNames[a.name as keyof typeof availableNames]?.length ??
+      members.length;
+    const bRestrictions =
+      availableNames[b.name as keyof typeof availableNames]?.length ??
+      members.length;
+    return aRestrictions - bRestrictions;
+  });
 
-  // Verificar que no se repitan asignaciones (un miembro no puede ser su propio Secret Santa)
-  for (const member of members) {
-    if (assignedNames[member.name] === member.name) {
-      console.error("Error: Un miembro no puede ser su propio Secret Santa.");
-      return;
-    }
+  // Ejecutar el algoritmo de backtracking
+  if (!backtrack(0)) {
+    console.error(
+      "No se pudo asignar Secret Santa con las restricciones dadas."
+    );
+    return null;
   }
 
-  // Encriptar los resultados y devolver la lista
+  // Devolver la lista con los resultados
   return members.map((member) => {
     const secretSanta = assignedNames[member.name];
     const encryptedSecretSanta = CryptoJS.AES.encrypt(
