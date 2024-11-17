@@ -71,6 +71,7 @@ export const SecretSantaCard = (props: any) => {
                 width={800}
                 height={800}
                 className="rounded-lg object-cover"
+                layout="responsive"
                 onLoad={() => setIsImageLoaded(true)}
               />
             </div>

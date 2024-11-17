@@ -93,20 +93,20 @@ export const secretSantaList: SecretSantaPerson[] = [
   },
 ];
 const passwordList = [
-  { name: "Ornella", password: "ornella" },
+  // { name: "Ornella", password: "ornella" },
   { name: "Tania", password: "ciao2" },
-  { name: "Elisa", password: "io" },
-  { name: "Rosita", password: "sonobella" },
-  { name: "Adriano", password: "sosexy" },
-  { name: "Alessandra", password: "fregna" },
-  { name: "Alessia", password: "creep" },
-  { name: "Barbara", password: "banana" },
-  { name: "Beatrice", password: "gay" },
-  { name: "Chiara", password: "paxxa" },
-  { name: "Fabio", password: "lol" },
-  { name: "Francesca", password: "fraculo" },
-  { name: "Marco", password: "paloma" },
-  { name: "Roberta", password: "gnu" },
+  // { name: "Elisa", password: "io" },
+  // { name: "Rosita", password: "sonobella" },
+  // { name: "Adriano", password: "sosexy" },
+  // { name: "Alessandra", password: "fregna" },
+  // { name: "Alessia", password: "creep" },
+  // { name: "Barbara", password: "banana" },
+  // { name: "Beatrice", password: "gay" },
+  // { name: "Chiara", password: "paxxa" },
+  // { name: "Fabio", password: "lol" },
+  // { name: "Francesca", password: "fraculo" },
+  // { name: "Marco", password: "paloma" },
+  // { name: "Roberta", password: "gnu" },
 ];
 
 export const assignSecretSanta = (members: SecretSantaPerson[]) => {
