@@ -51,17 +51,12 @@ export default function LandingPage() {
         >
           ISTRUZIONI
         </Button>
-        <Button
-          // onPress={() => {
-          //   const list = assignSecretSanta(secretSantaList);
-          //   console.log(list);
-          // }}
+        {/* <Button
           className="border-2 border-black mb-8 text-xl"
           color="danger"
-          // endContent={<SlPresent />}
         >
           Bachecha (Work in progress..)
-        </Button>
+        </Button> */}
         {/* </Card> */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 w-full max-w-[1200px]">
           {secretSantaList
@@ -85,9 +80,8 @@ export default function LandingPage() {
                   appartiene, o subirai le pene dell'inferno......
                   <p>Anzi, provaci. Ti sfido....</p>
                   <p>
-                    Se schiacci su Bacheca potrai scrivere le tue preferenze di
-                    regalo in uno spazio condiviso da tutti e il tuo Babbo
-                    Natale segreto potrá prendere spunti!
+                    Fra poco sará disponibile una parte dove ognuno potrá
+                    scrivere le proprie preferenze! Un bacione
                   </p>
                 </p>
               </ModalBody>
