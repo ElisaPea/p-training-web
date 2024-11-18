@@ -68,7 +68,10 @@ export const SecretSantaCard = (props: any) => {
   }, [cardView]);
 
   return (
-    <Card key={member.name} className="h-full w-64 md:w-full mx-auto border-4 ">
+    <Card
+      key={member.name}
+      className="min-h-48 h-full w-64 md:w-full mx-auto border-4 "
+    >
       {cardView === "member" && (
         <div onClick={() => setCardView("password")}>
           <Skeleton isLoaded={isImageLoaded} className="h-48 w-full rounded-lg">
