@@ -1,5 +1,4 @@
 import { Card, Button, Input, Skeleton } from "@nextui-org/react";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { IoMdEye } from "react-icons/io";
 import { IoMdEyeOff } from "react-icons/io";
@@ -32,13 +31,22 @@ export const SecretSantaCard = (props: any) => {
     pass: string
   ) => {
     const bytes = CryptoJS.AES.decrypt(encryptedName, pass);
-    console.log(encryptedName, bytes, bytes.toString(CryptoJS.enc.Utf8));
     return bytes.toString(CryptoJS.enc.Utf8);
   };
 
   useEffect(() => {
-    setIsImageLoaded(false);
+    const timer = setTimeout(() => {
+      setIsImageLoaded(true);
+    }, 2000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
+  useEffect(() => {
+    // setIsImageLoaded(false);
     let intervalId: any;
+
     if (cardView === "password" && passRef && passRef.current)
       passRef.current.focus();
     if (cardView === "secret" && counter > 0) {
@@ -65,14 +73,10 @@ export const SecretSantaCard = (props: any) => {
         <div onClick={() => setCardView("password")}>
           <Skeleton isLoaded={isImageLoaded} className="h-48 w-full rounded-lg">
             <div className="relative h-full w-full">
-              <Image
+              <img
                 src={member.img}
                 alt={member.name}
-                width={800}
-                height={800}
-                className="rounded-lg object-cover"
-                layout="responsive"
-                onLoad={() => setIsImageLoaded(true)}
+                className="rounded-lg object-cover w-full h-full"
               />
             </div>
             <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
@@ -88,13 +92,10 @@ export const SecretSantaCard = (props: any) => {
       {cardView === "password" && (
         <Skeleton isLoaded={isImageLoaded} className="h-48 w-full rounded-lg">
           <div className="relative h-full w-full">
-            <Image
-              src={"/images/Tree.webp"}
+            <img
+              src="/images/Tree.webp"
               alt={member.name}
-              width={800}
-              height={800}
-              className="rounded-lg object-cover"
-              onLoad={() => setIsImageLoaded(true)}
+              className="rounded-lg object-cover w-full h-full"
             />
           </div>
           <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
@@ -147,13 +148,10 @@ export const SecretSantaCard = (props: any) => {
         <>
           <Skeleton isLoaded={isImageLoaded} className="h-48 w-full rounded-lg">
             <div className="relative h-full w-full">
-              <Image
-                src={"/images/poop.webp"}
+              <img
+                src="/images/poop.webp"
                 alt={member.name}
-                width={800}
-                height={800}
-                className="rounded-lg object-cover"
-                onLoad={() => setIsImageLoaded(true)}
+                className="rounded-lg object-cover w-full h-full"
               />
             </div>
             <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
@@ -176,13 +174,10 @@ export const SecretSantaCard = (props: any) => {
         <>
           <Skeleton isLoaded={isImageLoaded} className="h-48 w-full rounded-lg">
             <div className="relative h-full w-full">
-              <Image
-                src={"/images/Santa.jpeg"}
+              <img
+                src="/images/Santa.jpeg"
                 alt={member.name}
-                width={800}
-                height={800}
-                className="rounded-lg object-cover"
-                onLoad={() => setIsImageLoaded(true)}
+                className="rounded-lg object-cover w-full h-full"
               />
             </div>
             <div className="absolute inset-0 bg-black opacity-60 rounded-lg"></div>
@@ -198,7 +193,6 @@ export const SecretSantaCard = (props: any) => {
           </Skeleton>
         </>
       )}
-      {/* </div> */}
     </Card>
   );
 };
